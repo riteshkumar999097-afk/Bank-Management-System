@@ -19,167 +19,167 @@ public class SignupTwo extends JFrame implements ActionListener{
 	SignupTwo(String formno){
 		this.formno = formno;
 
-		setLayout(null);
-		setTitle("Additional Details");
+		this.setLayout(null);
+		this.setTitle("Additional Details");
 
 
 
 		JLabel AdditionalDetails = new JLabel("Part B: \"Additional Details\"");
 		AdditionalDetails.setFont(new Font("Raleway", Font.BOLD, 20));
 		AdditionalDetails.setBounds(290, 80, 400, 30);
-		add(AdditionalDetails);
+		this.add(AdditionalDetails);
 
 		JLabel religion = new JLabel("Religion: ");
 		religion.setFont(new Font("Raleway", Font.BOLD, 20));
 		religion.setBounds(100, 140, 200, 30);//total height covered from frame 170
-		add(religion);
+		this.add(religion);
 
 		String valReligion[] = {"Hindu", "Muslim", "Sikh", "Christan", "Other"};
-		religionBox = new JComboBox(valReligion);
-		religionBox.setBounds(300, 140, 400, 30);
-		religionBox.setBackground(Color.white);
-		add(religionBox);
+		this.religionBox = new JComboBox(valReligion);
+		this.religionBox.setBounds(300, 140, 400, 30);
+		this.religionBox.setBackground(Color.white);
+		this.add(this.religionBox);
 
 
 		JLabel category = new JLabel("Category: ");
 		category.setFont(new Font("Raleway", Font.BOLD, 20));
 		category.setBounds(100, 190, 200, 30);//total height covered from frame 190+30
-		add(category);
+		this.add(category);
 
 		String valCategory[] = {"General", "OBC", "SC/ST", "Other"};
-		categoryBox = new JComboBox(valCategory);
-		categoryBox.setBounds(300, 190, 400, 30);
-		categoryBox.setBackground(Color.white);
-		add(categoryBox);
+		this.categoryBox = new JComboBox(valCategory);
+		this.categoryBox.setBounds(300, 190, 400, 30);
+		this.categoryBox.setBackground(Color.white);
+		this.add(this.categoryBox);
 
 
 		JLabel income = new JLabel("Income: ");
 		income.setFont(new Font("Raleway", Font.BOLD, 20));
 		income.setBounds(100, 240, 100, 30);//total height covered from frame 240+30
-		add(income);
+		this.add(income);
 
 		String valIncome[] = {"Null", "< 1,50,000", "< 2,50,000", "< 5,00,000"};
-		incomeBox = new JComboBox(valIncome);
-		incomeBox.setBounds(300, 240, 400, 30);
-		incomeBox.setBackground(Color.white);
-		add(incomeBox);
+		this.incomeBox = new JComboBox(valIncome);
+		this.incomeBox.setBounds(300, 240, 400, 30);
+		this.incomeBox.setBackground(Color.white);
+		this.add(this.incomeBox);
 
 		JLabel citizenship = new JLabel("CitizenShip: ");
 		citizenship.setFont(new Font("Raleway", Font.BOLD, 20));
 		citizenship.setBounds(100, 290, 200, 30);//total height covered from frame 240+30
-		add(citizenship);
+		this.add(citizenship);
 
 		String valCitizenship[] = {"Indian", "Non Residential Indian(NRI)", "Other"};
-		citizenshipBox = new JComboBox(valCitizenship);
-		citizenshipBox.setBounds(300, 290, 400, 30);
-		citizenshipBox.setBackground(Color.white);
-		add(citizenshipBox);
+		this.citizenshipBox = new JComboBox(valCitizenship);
+		this.citizenshipBox.setBounds(300, 290, 400, 30);
+		this.citizenshipBox.setBackground(Color.white);
+		this.add(this.citizenshipBox);
 
 		JLabel education = new JLabel("Education: ");
 		education.setFont(new Font("Raleway", Font.BOLD, 20));
 		education.setBounds(100, 340, 200, 30);//total height covered from frame 240+30
-		add(education);
+		this.add(education);
 
 		String valEducation[] = {"Matric", "Intermediate", "Graduate", "Post-Graduate", "Phd.", "Other"};
-		educationBox = new JComboBox(valEducation);
-		educationBox.setBounds(300, 340, 400, 30);
-		educationBox.setBackground(Color.white);
-		add(educationBox);
+		this.educationBox = new JComboBox(valEducation);
+		this.educationBox.setBounds(300, 340, 400, 30);
+		this.educationBox.setBackground(Color.white);
+		this.add(this.educationBox);
 
 		JLabel occupation = new JLabel("Occupation: ");
 		occupation.setFont(new Font("Raleway", Font.BOLD, 20));
 		occupation.setBounds(100, 390, 200, 30);//total height covered from frame 240+30
-		add(occupation);
+		this.add(occupation);
 
 		String valOccupation[] = {"Salaried", "Self-Employed", "Student", "Other"};
-		occupationBox = new JComboBox(valOccupation);
-		occupationBox .setBounds(300, 390, 400, 30);
-		occupationBox .setBackground(Color.white);
-		add(occupationBox );
+		this.occupationBox = new JComboBox(valOccupation);
+		this.occupationBox .setBounds(300, 390, 400, 30);
+		this.occupationBox .setBackground(Color.white);
+		this.add(this.occupationBox );
 
 		JLabel pan = new JLabel("PAN no: ");
 		pan.setFont(new Font("Raleway", Font.BOLD, 20));
 		pan.setBounds(100, 440, 100, 30);//total height covered from frame 240+30
-		add(pan);
+		this.add(pan);
 
-		panTextField = new JTextField();
-		panTextField.setFont(new Font("Raleway", Font.BOLD, 14));
-		panTextField.setBounds(300, 440, 400, 30);
-		add(panTextField);
+		this.panTextField = new JTextField();
+		this.panTextField.setFont(new Font("Raleway", Font.BOLD, 14));
+		this.panTextField.setBounds(300, 440, 400, 30);
+		this.add(this.panTextField);
 
 		JLabel aadhar = new JLabel("Aadhar No.: ");
 		aadhar.setFont(new Font("Raleway", Font.BOLD, 20));
 		aadhar.setBounds(100, 490, 200, 30);//total height covered from frame 240+30
-		add(aadhar);
+		this.add(aadhar);
 
 
-		aadharTextField = new JTextField();
-		aadharTextField.setFont(new Font("Raleway", Font.BOLD, 14));
-		aadharTextField.setBounds(300, 490, 400, 30);
-		add(aadharTextField);
+		this.aadharTextField = new JTextField();
+		this.aadharTextField.setFont(new Font("Raleway", Font.BOLD, 14));
+		this.aadharTextField.setBounds(300, 490, 400, 30);
+		this.add(this.aadharTextField);
 
 		JLabel citizen = new JLabel("Senior Citizen: ");
 		citizen.setFont(new Font("Raleway", Font.BOLD, 20));
 		citizen.setBounds(100, 540, 200, 30);//total height covered from frame 240+30
-		add(citizen);
+		this.add(citizen);
 
-		cyes = new JRadioButton("Yes");
-		cyes.setBounds(300,540, 60, 30);
-		cyes.setFont(new Font("Raleway",Font.BOLD,12 ));
-		cyes.setForeground(Color.black);
-		cyes.setBackground(Color.white);
-		add(cyes);
+		this.cyes = new JRadioButton("Yes");
+		this.cyes.setBounds(300,540, 60, 30);
+		this.cyes.setFont(new Font("Raleway",Font.BOLD,12 ));
+		this.cyes.setForeground(Color.black);
+		this.cyes.setBackground(Color.white);
+		this.add(this.cyes);
 
-		cno = new JRadioButton("No");
-		cno.setBounds(410, 540, 120, 30);
-		cno.setFont(new Font("Raleway",Font.BOLD,12 ));
-		cno.setForeground(Color.black);
-		cno.setBackground(Color.WHITE);
-		add(cno);
+		this.cno = new JRadioButton("No");
+		this.cno.setBounds(410, 540, 120, 30);
+		this.cno.setFont(new Font("Raleway",Font.BOLD,12 ));
+		this.cno.setForeground(Color.black);
+		this.cno.setBackground(Color.WHITE);
+		this.add(cno);
 
 		ButtonGroup citizenGroup = new ButtonGroup();
-		citizenGroup.add(cyes);
-		citizenGroup.add(cno);
+		citizenGroup.add(this.cyes);
+		citizenGroup.add(this.cno);
 
 
 		JLabel  existing_account = new JLabel("Existing Account: ");
 		existing_account.setFont(new Font("Raleway", Font.BOLD, 20));
 		existing_account.setBounds(100, 590, 200, 30);//total height covered from frame 240+30
-		add(existing_account);
+		this.add(existing_account);
 
 
-		yes = new JRadioButton("Yes");
-		yes.setBounds(300,590, 60, 30);
-		yes.setFont(new Font("Raleway",Font.BOLD,12 ));
-		yes.setForeground(Color.black);
-		yes.setBackground(Color.white);
-		add(yes);
+		this.yes = new JRadioButton("Yes");
+		this.yes.setBounds(300,590, 60, 30);
+		this.yes.setFont(new Font("Raleway",Font.BOLD,12 ));
+		this.yes.setForeground(Color.black);
+		this.yes.setBackground(Color.white);
+		this.add(this.yes);
 
-		no = new JRadioButton("No");
-		no.setBounds(410,590, 120, 30);
-		no.setFont(new Font("Raleway",Font.BOLD,12 ));
-		no.setForeground(Color.black);
-		no.setBackground(Color.WHITE);
-		add(no);
+		this.no = new JRadioButton("No");
+		this.no.setBounds(410,590, 120, 30);
+		this.no.setFont(new Font("Raleway",Font.BOLD,12 ));
+		this.no.setForeground(Color.black);
+		this.no.setBackground(Color.WHITE);
+		this.add(this.no);
 
 		ButtonGroup existing_accountGroup = new ButtonGroup();
 		existing_accountGroup.add(yes);
 		existing_accountGroup.add(no);
 
 
-		next = new JButton("Next");
-		next.setBackground(Color.black);
-		next.setForeground(Color.white);
-		next.setFont(new Font("Raleway", Font.BOLD, 14));
-		next.setBounds(620,660, 80, 30);
-		next.addActionListener(this);
-		add(next);
+		this.next = new JButton("Next");
+		this.next.setBackground(Color.black);
+		this.next.setForeground(Color.white);
+		this.next.setFont(new Font("Raleway", Font.BOLD, 14));
+		this.next.setBounds(620,660, 80, 30);
+		this.next.addActionListener(this);
+		this.add(this.next);
 
 
-		getContentPane().setBackground(Color.white);
-		setSize(850, 800);
-		setLocation(350,10);
-		setVisible(true);
+		this.getContentPane().setBackground(Color.white);
+		this.setSize(850, 800);
+		this.setLocation(350,10);
+		this.setVisible(true);
 	}
 
 
@@ -187,34 +187,34 @@ public class SignupTwo extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		String formno = this.formno; //long
-		String religion = (String)religionBox.getSelectedItem();  //not null
-		String category = (String)categoryBox.getSelectedItem();
-		String income = (String)incomeBox.getSelectedItem();
-		String education = (String)educationBox.getSelectedItem();
-		String occupation = (String)occupationBox.getSelectedItem();
+		String religion = (String)this.religionBox.getSelectedItem();  //not null
+		String category = (String)this.categoryBox.getSelectedItem();
+		String income = (String)this.incomeBox.getSelectedItem();
+		String education = (String)this.educationBox.getSelectedItem();
+		String occupation = (String)this.occupationBox.getSelectedItem();
 
-		String pan = panTextField.getText().trim();
-		String aadhar = aadharTextField.getText().trim();
+		String pan = this.panTextField.getText().trim();
+		String aadhar = this.aadharTextField.getText().trim();
 
 		String seniorcitizen = null;
-		if(cyes.isSelected()) {
+		if(this.cyes.isSelected()) {
 			seniorcitizen = "yes";
-		}else if(cno.isSelected()) { seniorcitizen = "no"; 
+		}else if(this.cno.isSelected()) { seniorcitizen = "no"; 
 		}else {
 			JOptionPane.showMessageDialog(null, "Please select Senior Citizen"); 
 			return; 
 		}
 
 		String existingaccount = null;
-		if(yes.isSelected()) {
+		if(this.yes.isSelected()) {
 			existingaccount = "yes";
-		}else if(no.isSelected()) { existingaccount = "no"; 
+		}else if(this.no.isSelected()) { existingaccount = "no"; 
 		}else {
 			JOptionPane.showMessageDialog(null, "Please select existing account"); 
 			return; 
 		}
 
-		String citizenship = (String)citizenshipBox.getSelectedItem();
+		String citizenship = (String)this.citizenshipBox.getSelectedItem();
 
 
 
@@ -249,7 +249,9 @@ public class SignupTwo extends JFrame implements ActionListener{
 			ps.close();
 
 			JOptionPane.showMessageDialog(null, "Data saved Successfully");
-			setVisible(false);
+			this.setVisible(false);
+		
+			new SignupThree(this.formno).setVisible(true);
 
 		}catch (Exception e) {
 			e.printStackTrace();
