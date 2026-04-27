@@ -3,6 +3,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 public class Login extends JFrame implements ActionListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton login, signup, clear;
 	JTextField cardTextField;
 	JPasswordField pinTextField;
@@ -85,7 +89,6 @@ public class Login extends JFrame implements ActionListener{
 		//getContentPane().setBackground(new Color(28, 43, 58));
 
 
-		JPanel panel = new JPanel();
 		getContentPane().setBackground(new Color(255, 255, 255, 80));
 
 
@@ -106,7 +109,12 @@ public class Login extends JFrame implements ActionListener{
 		}else if(ae.getSource() == login) {
 
 		}else if(ae.getSource() == signup) {
-
+			setVisible(false);
+			SignupOne start = new SignupOne();
+			start.setVisible(true);
+			
+			//we can also do
+			//new start();
 		}
 
 	}
