@@ -244,7 +244,8 @@ public class SignupThree extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(null,"Your Account is Generated Successfully!! Please note your details " + "\n Card Number: "+ card_number + "\n Pin: "+ pin);
 
 				this.setVisible(false);
-				new Login().setVisible(true);
+				new Deposit(pin).setVisible(true);
+			
 			}catch(Exception e) {
 				e.printStackTrace();
 			}

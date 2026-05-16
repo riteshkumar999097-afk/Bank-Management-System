@@ -2,6 +2,8 @@ package BankManagementSystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 public class Login extends JFrame implements ActionListener{
 	/**
 	 * 
@@ -11,7 +13,7 @@ public class Login extends JFrame implements ActionListener{
 	JTextField cardTextField;
 	JPasswordField pinTextField;
 	Login(){
-		
+
 		setTitle("Automatic Taylor Machine by Vasu");
 
 		setLayout(null);
@@ -58,31 +60,29 @@ public class Login extends JFrame implements ActionListener{
 		add(pinTextField);
 
 		//login button
-
-
-
+		
 		login = new JButton("SIGN IN");
-		login.setFont(new Font("Arial", Font.BOLD, 12));
-		login.setBounds(340, 280, 80, 20);
-		login.setBackground(new Color(10,31,68));
+		login.setFont(new Font("Roboto", Font.BOLD, 16));
+		login.setBounds(320, 280, 100, 25);
+		login.setBackground(new Color(0, 0, 128));
 		login.setForeground(Color.white);
 		login.addActionListener(this);
 		add(login);
 
 		//create account button
 		clear = new JButton("CLEAR");
-		clear.setFont(new Font("Arial", Font.BOLD, 12));
-		clear.setBounds(440, 280, 85, 20);
-		clear.setBackground(new Color(10,31,68));
+		clear.setFont(new Font("Roboto", Font.BOLD, 16));
+		clear.setBounds(440, 280, 100, 25);
+		clear.setBackground(new Color(0, 0, 128));
 		clear.setForeground(Color.white);
 		clear.addActionListener(this);
 		add(clear);
 
 
 		signup = new JButton("SIGN UP");
-		signup.setFont(new Font("Arial", Font.BOLD, 12));
-		signup.setBounds(340, 310, 185, 20);
-		signup.setBackground(new Color(10,31,68));
+		signup.setFont(new Font("Roboto", Font.BOLD, 16));
+		signup.setBounds(320, 315, 220, 25);
+		signup.setBackground(new Color(0, 0, 128));
 		signup.setForeground(Color.white);
 		signup.addActionListener(this);
 		add(signup);
@@ -107,12 +107,37 @@ public class Login extends JFrame implements ActionListener{
 			pinTextField.setText("");
 
 		}else if(ae.getSource() == login) {
+			Conn con = new Conn();
+			String cardnumber = cardTextField.getText();
+			//because we use JPasswordField instead of JTextField
+			String pin = String.valueOf(pinTextField.getPassword());
+
+			String query = "SELECT* FROM login WHERE card_number = ? AND pin = ?";
+			try {
+				PreparedStatement ps = con.con.prepareStatement(query);
+				ps.setString(1, cardnumber);
+				ps.setString(2, pin);
+				
+				//this will get the values from table and check if they match or not
+				ResultSet rs = ps.executeQuery();
+				if (rs.next()) {
+					System.out.println("Login Succesfull!");
+					this.setVisible(false);
+					new Transactions(pin).setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "Invalid Card Number or Pin!");
+				}
+
+
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 
 		}else if(ae.getSource() == signup) {
 			setVisible(false);
 			SignupOne start = new SignupOne();
 			start.setVisible(true);
-			
+
 			//we can also do
 			//new start();
 		}
