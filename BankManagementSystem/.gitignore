@@ -10,3 +10,29 @@
 /PinChange.class
 /BalanceEnquiry.class
 /MiniStatement.class
+
+*.class
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code / Visual Studio
+.vscode/
+.vs/
+
+# Java compiled files
+*.class
+bin/
+out/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jar files (optional)
+*.jar

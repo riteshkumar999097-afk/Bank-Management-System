@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 
 import javax.swing.*;
-import java.util.*;
-import com.toedter.calendar.JDateChooser;
 public class SignupTwo extends JFrame implements ActionListener{
 
 	//  JLabel formno, personDetails, name, fname,dob, gender, email, martialStatus, address, state, city, pincode;
@@ -243,9 +241,6 @@ public class SignupTwo extends JFrame implements ActionListener{
 			//this will insert data in table
 
 			ps.executeUpdate();
-
-
-
 			ps.close();
 
 			JOptionPane.showMessageDialog(null, "Data saved Successfully");
