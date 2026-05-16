@@ -5,9 +5,7 @@ import java.awt.event.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class Login extends JFrame implements ActionListener{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	JButton login, signup, clear;
 	JTextField cardTextField;

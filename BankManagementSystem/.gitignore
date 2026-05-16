@@ -36,3 +36,10 @@ Thumbs.db
 
 # Jar files (optional)
 *.jar
+
+# unneccessary files
+BankManagementSystem/.classpath
+BankManagementSystem/.project
+BankManagementSystem/.settings/
+BankManagementSystem/.gitignore
+BankManagementSystem/*.jar
