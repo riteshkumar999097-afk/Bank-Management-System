@@ -192,7 +192,14 @@ public class SignupTwo extends JFrame implements ActionListener{
 		String occupation = (String)this.occupationBox.getSelectedItem();
 
 		String pan = this.panTextField.getText().trim();
+		if( pan.equals(null) || pan.length() != 10) {
+			JOptionPane.showMessageDialog(null,  "enter valid PAN number!");
+			return;
+		}
 		String aadhar = this.aadharTextField.getText().trim();
+		if(aadhar.equals(null) || aadhar.length() != 12 || !aadhar.matches( "\\d+")) {
+			JOptionPane.showMessageDialog(null, "Please enter Valid Aadhar Number !");
+		}
 
 		String seniorcitizen = null;
 		if(this.cyes.isSelected()) {

@@ -41,6 +41,7 @@ public class Login extends JFrame implements ActionListener{
 		cardno.setFont(new Font("Raleway", Font.BOLD, 30));
 		cardno.setBounds(185, 150, 150, 40);
 		add(cardno);
+		
 		//card box 
 		cardTextField = new JTextField();
 		cardTextField.setBounds(320, 155, 220, 30);

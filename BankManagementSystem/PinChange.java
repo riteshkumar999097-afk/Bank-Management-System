@@ -2,7 +2,6 @@ package BankManagementSystem;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import java.sql.*;
@@ -95,7 +94,7 @@ public class PinChange extends JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(null, "Enterd PIN does not match");
 					return;
 				}
-				if(npin.equals("") || rpin.equals("")) {
+				if(npin.equals("") || rpin.equals("") || !npin.matches("\\d+") || !rpin.matches("\\d+")) {
 					JOptionPane.showMessageDialog(null, "Please enter your New Pin");
 					return;
 				}

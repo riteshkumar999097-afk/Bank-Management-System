@@ -203,8 +203,17 @@ public class SignupOne extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent ae) {
 		String formno = ""+this.application_number; //long
 		String name = this.nameTextField.getText().trim();  //not null
+		if(name.equals("")) {
+			JOptionPane.showMessageDialog(null, "Name is Required");
+			return;
+		}
 		String father_name = this.father_nameTextField.getText().trim();
 		Date dob = this.dateChooser.getDate(); //not null
+		if(dob == null){
+			JOptionPane.showMessageDialog(null, "DOB is Required");
+
+			return;
+		}
 
 		String gender = null;
 		if(this.male.isSelected()) {
@@ -216,6 +225,11 @@ public class SignupOne extends JFrame implements ActionListener{
 		}
 		String email = this.emailTextField.getText().trim(); //email
 
+		if(email.equals("")) {
+			JOptionPane.showMessageDialog(null, "Email is Required");
+			return;
+		}
+		
 		String martial_status = null;
 		if(this.married.isSelected()) {
 			martial_status = "Married";
@@ -230,32 +244,27 @@ public class SignupOne extends JFrame implements ActionListener{
 
 		String address = this.addressTextField.getText().trim();
 		String city = this.cityTextField.getText().trim(); //not null
-		String pincode = this.pincodeTextField.getText().trim(); //not null
-		String state = this.stateTextField.getText().trim();
 
-		//check before sending data in sql 
-
-		if(name.equals("")) {
-			JOptionPane.showMessageDialog(null, "Name is Required");
-			return;
-		}
-		if(dob == null){
-			JOptionPane.showMessageDialog(null, "DOB is Required");
-
-			return;
-		}
-		if(email.equals("")) {
-			JOptionPane.showMessageDialog(null, "Email is Required");
-			return;
-		}
 		if(city.equals("")) {
 			JOptionPane.showMessageDialog(null, "City is Required");
 			return;
 		}
+		String pincode = this.pincodeTextField.getText().trim(); //not null
 		if(pincode.equals("")) {
 			JOptionPane.showMessageDialog(null, "Pincode is Required");
 			return;
+		}else if(!pincode.matches("\\d+")) {
+			JOptionPane.showMessageDialog(null, "enter valid Pincode !");
+			return;
 		}
+		String state = this.stateTextField.getText().trim();
+
+		//check before sending data in sql 
+
+		
+		
+		
+		
 
 		try {
 			Conn c = new Conn();

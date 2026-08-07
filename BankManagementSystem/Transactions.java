@@ -56,14 +56,6 @@ public class Transactions extends JFrame implements ActionListener {
 		balance.addActionListener(this);
 		image.add(balance);
 		
-		/*JButton transfer = new JButton("Fund Transfer");
-		transfer.setFont(new Font("Roboto", Font.BOLD, 16));
-		transfer.setForeground(Color.white);
-		transfer.setBounds(450, 450, 170, 30);
-		transfer.setBackground(new Color(0, 0, 128)); 
-		transfer.addActionListener(this);
-		add(transfer);
-		image.add(transfer);*/
 		
 		
 		//button in Left

@@ -33,12 +33,12 @@ public class Deposit extends JFrame implements ActionListener{
 		welcome.setForeground(Color.BLUE);
 		welcome.setBackground(Color.GREEN);
 		image.add(welcome);
-		
+
 		amount = new JTextField();
 		amount.setFont(new Font("Raleway", Font.BOLD,18));
 		amount.setBounds(250,300, 300, 30);
 		image.add(amount);
-		
+
 		cancel = new JButton("Cancel");
 		cancel.setFont(new Font("Roboto", Font.BOLD, 16));
 		cancel.setBackground(new Color(0, 0, 128));
@@ -46,7 +46,7 @@ public class Deposit extends JFrame implements ActionListener{
 		cancel.setBounds(280, 400, 100, 30);
 		cancel.addActionListener(this);
 		image.add(cancel);
-		
+
 		deposit = new JButton("Deposit");
 		deposit.setFont(new Font("Roboto", Font.BOLD, 16));
 		deposit.setBackground(new Color(0, 0, 128));
@@ -65,8 +65,8 @@ public class Deposit extends JFrame implements ActionListener{
 		exit.setBackground(new Color(0, 0, 128));
 		exit.addActionListener(this);
 		image.add(exit);
-*/
-		
+		 */
+
 
 
 
@@ -89,41 +89,42 @@ public class Deposit extends JFrame implements ActionListener{
 			this.setVisible(false);
 			new Transactions(pin).setVisible(true);
 		}else if(ae.getSource() == deposit) {
-			
-			String money = amount.getText();
+
+			String money = amount.getText().trim();
 			Date date = new Date();
-			
-			if(money.equals("")) {
-				JOptionPane.showMessageDialog(null, "Please Enter a Valid Amount");
-				
-				
-			}else {
-				
+
+			if(money != null && money.matches("\\d+") && Integer.parseInt(money) > 0) {
+				//matches will match string "\\d+" for integer format
 				Conn con = new Conn();
 				String query = "INSERT INTO bank (pin, date, type, amount)"+
-				"VALUES(?, now(), ?, ?)";//now() -> for date and time, curdate() -> for date only
+						"VALUES(?, now(), ?, ?)";//now() -> for date and time, curdate() -> for date only
 				try {
 					PreparedStatement ps = con.con.prepareStatement(query);
 
 					ps.setString(1, pin);
 					ps.setString(2, "Deposit");
 					ps.setString(3, money);
-					
+
 					ps.executeUpdate();
-					
+
 					JOptionPane.showMessageDialog(null, "Deposit of Rs. "+ money +" is Successfull!");
-					
+
 					setVisible(false);
 					new Transactions(pin).setVisible(true);
-					
+
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
+
+
+			}else {
+				JOptionPane.showMessageDialog(null, "Please Enter a Valid Amount");
+
 			}
-			
-			
-			
+
+
+
 		}
-		
+
 	}
 }
