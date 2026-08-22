@@ -1,16 +1,5 @@
-/Login.class
-/SignupOne.class
-/Conn.class
-/SignupTwo.class
-/SignupThree.class
-/Transactions.class
-/Deposit.class
-/Withdrawl.class
-/FastCash.class
-/PinChange.class
-/BalanceEnquiry.class
-/MiniStatement.class
 
+#class files
 *.class
 
 # Eclipse

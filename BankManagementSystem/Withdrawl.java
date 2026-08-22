@@ -92,7 +92,7 @@ public class Withdrawl extends JFrame implements ActionListener{
 				String money = amount.getText();
 				Date date = new Date();
 				
-				if(money.equals("") || !money.matches("\\d+")) {
+				if(money.equals("")) {
 					JOptionPane.showMessageDialog(null, "Please Enter a Valid Amount");
 					
 					
@@ -109,6 +109,7 @@ public class Withdrawl extends JFrame implements ActionListener{
 						ps.setString(3, money);
 						
 						ps.executeUpdate();
+						ps.close();
 						
 						JOptionPane.showMessageDialog(null, "Withdraw of Rs. "+ money +" is Successfull!");
 						

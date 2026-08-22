@@ -240,6 +240,7 @@ public class SignupThree extends JFrame implements ActionListener{
 
 				ps.executeUpdate();
 				pl.executeUpdate();
+				ps.close();
 
 				JOptionPane.showMessageDialog(null,"Your Account is Generated Successfully!! Please note your details " + "\n Card Number: "+ card_number + "\n Pin: "+ pin);
 

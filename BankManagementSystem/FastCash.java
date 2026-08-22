@@ -146,6 +146,7 @@ public class FastCash extends JFrame implements ActionListener{
 				ps.setString(2, "Withdraw");
 				ps.setString(3, amount);
 				ps.executeUpdate();
+				ps.close();
 
 				JOptionPane.showMessageDialog(null, "RS "+amount+" is Debited Successfully");
 
